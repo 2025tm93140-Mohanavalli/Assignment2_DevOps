@@ -4,3 +4,4 @@ __pycache__/
 .env
 .pytest_cache/
 aceest_fitness.db
+.venv/
