@@ -43,7 +43,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-APP_VERSION = "2.0"
+APP_VERSION = "2.1"
 
 # Sample workout data
 workout_data = [
