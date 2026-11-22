@@ -35,6 +35,23 @@ pipeline {
             }
         }
 
+        stage('SonarQube Analysis') {
+            steps {
+                withCredentials([string(
+                    credentialsId: 'sonarqube-token',
+                    variable: 'SONAR_TOKEN'
+                )]) {
+                    sh '''
+                        /usr/local/bin/sonar-scanner \
+                        -Dsonar.host.url=http://localhost:9000 \
+                        -Dsonar.login="$SONAR_TOKEN" \
+                        -Dsonar.qualitygate.wait=true \
+                        -Dsonar.qualitygate.timeout=300
+                    '''
+                }
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh '''
