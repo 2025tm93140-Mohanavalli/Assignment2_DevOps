@@ -5,3 +5,8 @@ __pycache__/
 .pytest_cache/
 aceest_fitness.db
 .venv/
+# SonarQube
+.scannerwork/
+
+# Test results
+pytest-docker-results.xml
